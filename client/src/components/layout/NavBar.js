@@ -1,12 +1,15 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
+import { clearCurrentProfile } from "../../actions/profileActions";
 
 class NavBar extends Component {
   onLogoutClick(e) {
     e.preventDefault();
+    this.props.clearCurrentProfile();
     this.props.logoutUser();
   }
 
@@ -91,5 +94,5 @@ const mapStatetoProps = state => ({
 
 export default connect(
   mapStatetoProps,
-  { logoutUser }
+  { logoutUser, clearCurrentProfile }
 )(NavBar);
