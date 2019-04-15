@@ -1,6 +1,6 @@
 import React from "react";
 import spinner from "./spinner.gif";
-export default function Spiner() {
+export default function Spinner() {
   return (
     <div>
       <img
