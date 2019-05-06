@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
 import PropTypes from "prop-types";
+import { connect } from "react-redux";
 import PostForm from "./PostForm";
-//import PostFeed from "./PostFeed";
+import PostFeed from "./PostFeed";
 import Spinner from "../common/Spinner";
 import { getPosts } from "../../actions/postActions";
 
@@ -18,7 +18,7 @@ class Posts extends Component {
     if (posts === null || loading) {
       postContent = <Spinner />;
     } else {
-      //postContent = <PostFeed posts={posts} />;
+      postContent = <PostFeed posts={posts} />;
     }
 
     return (
@@ -37,12 +37,12 @@ class Posts extends Component {
 }
 
 Posts.propTypes = {
-  post: PropTypes.object.isRequired,
-  getPosts: PropTypes.func.isRequired
+  getPosts: PropTypes.func.isRequired,
+  post: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({
-  posts: state.post
+  post: state.post
 });
 
 export default connect(

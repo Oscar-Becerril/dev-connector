@@ -44,3 +44,6 @@ export const ADD_POST = "ADD_POST";
 
 // DELETE POST
 export const DELETE_POST = "DELETE_POST";
+
+// CLEAR_ERRORS
+export const CLEAR_ERRORS = "CLEAR_ERRORS";
